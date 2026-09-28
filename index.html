@@ -114,6 +114,22 @@ section{display:flex;flex-direction:column;gap:20px}
 .gens.irish .tag{color:var(--irish)}
 #gough-h + .note{margin-bottom:4px}
 
+
+/* Family DNA results */
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;align-items:start}
+.person{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.person.pending{background:transparent;border-style:dashed}
+.person .who{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.person .who h3{font-size:1.25rem}
+.pill{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:99px;border:1px solid var(--rule);color:var(--muted);white-space:nowrap}
+.pill.done{border-color:var(--irish);color:var(--irish)}
+.minibar{display:flex;height:10px;border-radius:3px;overflow:hidden}
+.minibar span{display:block;height:100%}
+.pick{border-left:3px solid var(--irish);padding-left:12px;display:flex;flex-direction:column;gap:4px}
+.pick b{font-family:var(--display);font-size:1.15rem}
+.pick p,.person p{font-size:.92rem;color:var(--muted)}
+.person ul{margin:0;padding-left:1.1em;font-size:.92rem;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+
 /* Branch cards */
 .branches{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
 .branch{background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:10px;border-top:4px solid var(--c)}
@@ -136,7 +152,6 @@ footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--rule);padd
 </style>
 
 
-<style>html{color-scheme:light}body{margin:0}img{max-width:100%}</style>
 </head>
 <body>
 <div class="wrap">
@@ -163,7 +178,26 @@ footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--rule);padd
         <ul><li><span>North-west Germany</span><span>6%</span></li><li><span>Eastern European Roma</span><span>&lt;1%</span></li></ul>
         <p class="note">Ancestry also traces migration journeys to the Wiltshire/Dorset area, the Leitrim–Cavan border and East Tipperary.</p></div>
     </div>
-    <p class="note">These are one brother's results. Brothers share about half their DNA, so a brother's estimate will look similar but not identical. Dad only carries the Noakes-side half, so testing him would show which side the Scottish and Welsh share comes from.</p>
+    <p class="note">These are Bryce's results. Brothers share about half their DNA, so a brother's estimate will look similar but not identical. Dad only carries the Noakes-side half, so testing him would show which side the Scottish and Welsh share comes from.</p>
+  </div>
+</section>
+
+<section aria-labelledby="ppl-h">
+  <span class="eyebrow">Each of us</span>
+  <h2 id="ppl-h">Our DNA results, person by person</h2>
+  <p class="note">Each person who tests gets their own card, showing where their DNA is most from and the places in the tree that match it. Siblings get a different mix from the same parents, and Dad's and Mum's results would show which side each region comes from.</p>
+  <div class="people">
+    <article class="person">
+      <div class="who"><h3>Bryce</h3><span class="pill done">Tested</span></div>
+      <div class="minibar" role="img" aria-label="Celtic 61, English 33, Europe 6 percent"><span style="width:61%;background:var(--celtic)"></span><span style="width:33%;background:var(--english)"></span><span style="width:6%;background:var(--europe)"></span></div>
+      <p>61% Celtic &amp; Gaelic · 33% English · 6% north-west Germany.</p>
+      <div class="pick"><span class="eyebrow">Where {{ME}}'s DNA is most from</span><b>Ireland, about 40%</b><p>Central Scotland &amp; Northern Ireland 21% · Connacht 10% · Leinster 5% · Munster 3%, plus Isle of Man and Hebrides 1% each. No other area comes close.</p></div>
+      <div class="pick"><span class="eyebrow">The two towns</span><b>Manorhamilton, Co. Leitrim</b><p>On the Connacht–Ulster border, where the two biggest groups (21% and 10%) meet. Ancestry traced a Leitrim–Cavan journey from the DNA alone, and Kerrigan ancestor Sarah Harkins died here in 1886.</p><b>Templemore, Co. Tipperary</b><p>Munster. Ancestry traced an East Tipperary journey from the DNA, and the Carden ancestors lived here: Frederick Carden was born here in 1831.</p></div>
+      <ul><li>Both towns are on Mum's side, through the Gough and Lawler lines.</li><li>Still unexplained: the 20% Southern Wales. Best guess is the Stafford line or the Forest of Dean families.</li><li>On Dad's side the answer would be Hanley Castle, Worcestershire.</li></ul>
+    </article>
+    <article class="person pending"><div class="who"><h3>Bryce's brother</h3><span class="pill">Not tested yet</span></div><p>Same parents, different mix. Expect a similar split, with the exact regions shuffled.</p></article>
+    <article class="person pending"><div class="who"><h3>Dad</h3><span class="pill">Not tested yet</span></div><p>Only the Noakes side. His result would show how much of the Scottish, Welsh and Irish comes from the Noakes, Thompson, Cooper and Stafford lines.</p></article>
+    <article class="person pending"><div class="who"><h3>Mum</h3><span class="pill">Not tested yet</span></div><p>The Yearsley, Gough and Irish side. Her result should carry most of the Irish, and would confirm the Leitrim and Tipperary links.</p></article>
   </div>
 </section>
 
@@ -207,7 +241,7 @@ footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--rule);padd
     <li><span class="yr num">1898–1968</span><span class="node"></span><div class="body"><div class="who">Robert Seavor Noakes</div><div class="where">Born New South Wales. Married Dorothy Ford Thompson of Kempsey.</div></div></li>
     <li><span class="yr num">Sydney</span><span class="node"></span><div class="body"><div class="who">Grandad</div><div class="where">Married Nan (née Stafford).</div></div></li>
     <li><span class="yr num">Sydney</span><span class="node"></span><div class="body"><div class="who">Dad</div><div class="where">Married Mum (née Yearsley).</div></div></li>
-    <li><span class="yr num">Sydney</span><span class="node"></span><div class="body"><div class="who">Us brothers</div><div class="where">Twelve generations from Hanley Castle.</div></div></li>
+    <li><span class="yr num">Sydney</span><span class="node"></span><div class="body"><div class="who">Bryce and his brother</div><div class="where">Twelve generations from Hanley Castle.</div></div></li>
   </ol>
 </section>
 
@@ -251,7 +285,7 @@ footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--rule);padd
       <ul><li><b>Nan (née Stafford)</b> <span>Grandad's wife. Her parents and where the Staffords came from aren't in the tree yet. Dad, this one is yours to fill in.</span></li></ul></article>
   </div>
 
-  <div class="subhead" style="margin-top:20px"><h2>Mum's side</h2><p>Shared by us brothers; not Dad's ancestry.</p></div>
+  <div class="subhead" style="margin-top:20px"><h2>Mum's side</h2><p>Shared with Bryce's brother; not Dad's ancestry.</p></div>
   <div class="branches">
     <article class="branch" style="--c:var(--dorset)"><h3>Yearsley &amp; Brace</h3><div class="route-line">Forest of Dean → Dorset → Sydney</div>
       <ul><li><b>Ronald Yearsley</b> <span>1928 Sydney – 2015 Wyong</span></li><li><b>Herbert Walter "Bert" Yearsley</b> <span>1906 Wareham, Dorset – 1996 Brisbane</span></li><li><b>Cornelius Frederick Yearsley</b> <span>b. c.1860 Wareham</span></li><li><b>Cornelius Yearsley</b> <span>b. c.1814 Ruardean, Gloucestershire</span></li><li><b>Stephen Yearsley</b> <span>1768 Ruardean – 1847 Dorchester</span></li><li><b>Mary Brace</b> <span>1776 Herefordshire – 1848 Hereford</span></li></ul></article>
@@ -276,7 +310,7 @@ footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--rule);padd
   </div>
 
   <h3 style="margin-top:12px;font-size:1.4rem">Add-on: the Irish lines, about 6 days</h3>
-  <p class="note">Fly Dublin in, drive west and north, finish at Cork. Mum's side, so this one is mainly for us brothers.</p>
+  <p class="note">Fly Dublin in, drive west and north, finish at Cork. Mum's side, so this one is mainly for Bryce and his brother.</p>
   <div class="trip">
     <div class="stop" style="--c:var(--irish)"><h3>1 · Dublin, 1 day</h3><p>Home of the McDonalds and Grays. The National Library of Ireland's Catholic parish registers are free online and the best next step for finding Francis Gough's parents.</p></div>
     <div class="stop" style="--c:var(--irish)"><h3>2 · Kilconly &amp; Tuam, Co. Galway</h3><p>The Gough home parish, a small rural parish just north of Tuam. About 2.5 hours from Dublin.</p></div>
@@ -284,6 +318,7 @@ footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--rule);padd
     <div class="stop" style="--c:var(--irish)"><h3>Via · Carlow, Baltinglass &amp; Templemore</h3><p>On the road west from Dublin: the Lawlers (Carlow), Cunninghams (Baltinglass, Wicklow) and Cardens (Templemore, Tipperary), the families of Lillian Gough's mother.</p></div>
     <div class="stop" style="--c:var(--irish)"><h3>4 · Co. Clare</h3><p>Margaret Rickards' home county (Rickards and Moriarty families). The Cliffs of Moher and the Burren are on the way south.</p></div>
     <div class="stop" style="--c:var(--irish)"><h3>5 · Cork &amp; Cobh</h3><p>The <i>Mary Nixon</i> called at Cork in August 1841 on its way to Melbourne. The Cobh Heritage Centre tells the emigration story.</p></div>
+    <div class="stop" style="--c:var(--irish)"><h3>{{ME}}'s DNA stops · Manorhamilton &amp; Templemore</h3><p>The two towns that best match {{ME}}'s DNA. Manorhamilton fits between stops 2 and 4; Templemore is on the drive from Carlow to Clare. Each family member who tests adds their own stops here.</p></div>
     <div class="stop" style="--c:var(--irish)"><h3>Side trip · Greenock, Scotland</h3><p>William Kerrigan was born here around 1830 to Irish parents. It fits a Scotland leg if you head north.</p></div>
   </div>
 </section>
@@ -299,7 +334,7 @@ footer{font-size:.85rem;color:var(--muted);border-top:1px solid var(--rule);padd
   </ul>
 </section>
 
-<footer>Compiled from the Noakes Family Tree on Ancestry and an AncestryDNA estimate (updated October 2025). DNA percentages are estimates.</footer>
+<footer>Compiled from the Noakes Family Tree on Ancestry and Bryce's AncestryDNA estimate (updated October 2025). DNA percentages are estimates.</footer>
 </div>
 
 <script>
